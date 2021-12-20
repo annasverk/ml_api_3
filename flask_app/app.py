@@ -96,9 +96,9 @@ app.config['ERROR_404_HELP'] = False
 api = Api(app)
 metrics = PrometheusMetrics(app)
 
-MLFLOW_HOST = os.environ['MLFLOW_HOST']
-MLFLOW_PORT = os.environ['MLFLOW_PORT']
-# MLFLOW_HOST, MLFLOW_PORT = '0.0.0.0', 5050
+# MLFLOW_HOST = os.environ['MLFLOW_HOST']
+# MLFLOW_PORT = os.environ['MLFLOW_PORT']
+MLFLOW_HOST, MLFLOW_PORT = '0.0.0.0', 5050
 MLFLOW_EXPERIMENT = 'hw3_exp'
 mlflow.set_tracking_uri(f'http://{MLFLOW_HOST}:{MLFLOW_PORT}')
 mlflow.set_experiment(MLFLOW_EXPERIMENT)
@@ -523,7 +523,7 @@ class MLModelsAll(Resource):
 
 if __name__ == '__main__':
     log.info('App started')
-    app.run(host=os.environ['HOST'],
-            port=os.environ['PORT'])
-    # app.run(host='0.0.0.0', port=8080, debug=False)
+    # app.run(host=os.environ['HOST'],
+    #         port=os.environ['PORT'])
+    app.run(host='0.0.0.0', port=8080, debug=False)
     log.info('App finished')
