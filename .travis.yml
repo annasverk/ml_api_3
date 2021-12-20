@@ -9,7 +9,8 @@ python:
 install:
   - pip install -r requirements.txt
 
-scripts:
+script:
+  - bash run_mlflow.sh
   - python -m unittest discover
   - coverage run -m unittest discover
   - coverage report

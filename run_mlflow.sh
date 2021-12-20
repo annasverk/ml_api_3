@@ -1,0 +1,1 @@
+mlflow server --host 0.0.0.0 --port 5050  --backend-store-uri sqlite:///ml.db --default-artifact-root ./mlartifacts
