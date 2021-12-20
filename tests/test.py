@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.datasets import load_iris, load_boston
 from mlflow.tracking import MlflowClient
 from scipy.stats import ks_2samp
-from app import app
+from flask_app import app as test_app
 
 boston_data = load_boston()
 boston_df = pd.DataFrame(boston_data.data, columns=boston_data.feature_names)
@@ -26,7 +26,7 @@ client = MlflowClient()
 
 class TestFlaskApp(unittest.TestCase):
     def setUp(self):
-        self.client = app.test_client()
+        self.client = test_app.app.test_client()
 
     def test_get_ml_models(self):
         """

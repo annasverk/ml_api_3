@@ -11,6 +11,9 @@ install:
 
 scripts:
   - python -m unittest discover
+  - coverage run -m unittest discover
+  - coverage report
+  - pylint flask_app/app.py
 
 branches:
   only:

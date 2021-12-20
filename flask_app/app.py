@@ -99,7 +99,7 @@ metrics = PrometheusMetrics(app)
 MLFLOW_HOST = os.environ['MLFLOW_HOST']
 MLFLOW_PORT = os.environ['MLFLOW_PORT']
 # MLFLOW_HOST, MLFLOW_PORT = '0.0.0.0', 5050
-MLFLOW_EXPERIMENT = 'ml_exp'
+MLFLOW_EXPERIMENT = 'hw3_exp'
 mlflow.set_tracking_uri(f'http://{MLFLOW_HOST}:{MLFLOW_PORT}')
 mlflow.set_experiment(MLFLOW_EXPERIMENT)
 log.info(f'MLflow experiment {MLFLOW_EXPERIMENT} started')
