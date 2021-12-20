@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+
+  # Flask application
+  app:
+    # Use an image that is built from the Dockerfile in the directory specified under context
+    build:
+      context: ./flask_app
+      dockerfile: Dockerfile
+    # Restart the container always
+    restart: always
+    # Bind the container and the host machine to the exposed port
+    ports:
+      - 8080:8080
+    volumes:
+      - ./flask_app/data:/flask_app/data
+
+  # Monitoring service
+  prometheus:
+    # Use a public prometheus image pulled from the Docker Hub registry
+    image: prom/prometheus:latest
+    # Bind the container and the host machine to the exposed port
+    ports:
+      - 9090:9090
+    # Mount host paths volumes
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  # Visualization platform
+  grafana:
+    # Use a public grafana image pulled from the Docker Hub registry
+    image: grafana/grafana:latest
+    # Bind the container and the host machine to the exposed port
+    ports:
+      - 3000:3000
+    # Mount host paths volumes
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini
+    links:
+      - prometheus
+
+  # ML lifecycle platform
+  mlflow:
+    # Use an image that is built from the Dockerfile in the current directory
+    build: .
+    # Bind the container and the host machine to the exposed port
+    ports:
+      - 5050:5050

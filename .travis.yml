@@ -1,0 +1,23 @@
+os: linux
+
+language: python
+
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+
+install:
+  - pip install -r requirements.txt
+
+scripts:
+  - python -m unittest discover
+
+branches:
+  only:
+    - master
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: ml_api_3
