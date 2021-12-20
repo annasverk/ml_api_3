@@ -134,11 +134,13 @@ class MLModelsDAO:
                       f'Could not make predictions')
             return f'Model {model_name} of version {model_version} was deleted', 404
 
+        log.info('Read data')
         with open(f'data/{model_name}_{model_version}_train.pkl', 'rb') as f:
             X_train = pickle.load(f).iloc[:, :-1]
         with open(f'data/{model_name}_{model_version}_test.pkl', 'rb') as f:
             X_test = pickle.load(f).iloc[:, :-1]
 
+        log.info('Load model')
         estimator = mlflow.pyfunc.load_model(f'models:/{model_name}/{model_version}')
         train_pred = list(np.round(estimator.predict(X_train), 2))
         test_pred = list(np.round(estimator.predict(X_test), 2))
@@ -178,6 +180,7 @@ class MLModelsDAO:
             params['probability'] = True
 
         with mlflow.start_run():
+            log.info('Read data')
             df = pd.read_json(data)
             X, y = df.iloc[:, :-1], df.iloc[:, -1]
             log.info(f'Number of observations: {len(X)}')
@@ -302,6 +305,7 @@ class MLModelsDAO:
                       f'Could not make predictions')
             return f'Model {model_name} of version {model_version} was deleted', 404
 
+        log.info('Read data')
         with open(f'data/{model_name}_{model_version}_test.pkl', 'rb') as f:
             test = pickle.load(f)
 
@@ -312,6 +316,7 @@ class MLModelsDAO:
             log.info(f'Size of training set: {len(X_train)} observations\n'
                      f'Size of testing set: {len(X_test)} observations')
 
+            log.info('Load model')
             model = self.ml_models_all[model_name + "_" + model_version]["model"]
             estimator = mlflow.sklearn.load_model(f'models:/{model_name}/{model_version}')
             mlflow.log_params(estimator.get_params())
@@ -385,6 +390,7 @@ class MLModelsDAO:
                       f'Could not make predictions')
             return f'Model {model_name} of version {model_version} was deleted', 404
 
+        log.info('Find run id for the given model to delete')
         results = pd.DataFrame(
             [dict(i) for i in client.search_model_versions(f"name='{model_name}'")])
         run_id = results[results.version == model_version]['run_id'].values[0]
@@ -413,7 +419,6 @@ class MLModels(Resource):
         :return: List of available models
         :rtype: list
         """
-        log.info(f'Total number of fitted models: {len(models_dao.ml_models)}')
         return models_dao.ml_models
 
     @common_counter
@@ -502,6 +507,7 @@ class MLModelsID(Resource):
         :return: Nothing
         :rtype: str
         """
+        log.info(f'Delete model {model_name} of version {model_version}')
         models_dao.delete(model_name, model_version)
         return '', 204
 
@@ -518,6 +524,7 @@ class MLModelsAll(Resource):
         :return: Dictionary of all fitted models
         :rtype: dict
         """
+        log.info(f'Total number of fitted models: {len(models_dao.ml_models)}')
         return models_dao.ml_models_all
 
 

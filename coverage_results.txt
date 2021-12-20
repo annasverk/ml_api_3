@@ -1,0 +1,288 @@
+(venv) (base) annasverkunova@mbp-anna-2 hw3 % coverage run -m unittest discover
+2021/12/20 19:56:27 INFO mlflow.tracking.fluent: Experiment with name 'hw3_test' does not exist. Creating a new experiment.
+2021-12-20 19:56:28,208 | flask_app.app | INFO | MLflow experiment hw3_test started
+2021-12-20 19:56:28,239 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:28,437 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:28,439 | flask_app.app | ERROR | Data contains categorical features
+Could not fit the model
+.2021-12-20 19:56:28,476 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:28,519 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:28,519 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:28,523 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:28,524 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:29,181 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.26 sec
+Total number of fitted models: 1
+2021-12-20 19:56:29,181 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:29,281 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Successfully registered model 'rf'.
+2021/12/20 19:56:31 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 1
+Created version '1' of model 'rf'.
+2021-12-20 19:56:32,209 | flask_app.app | INFO | Save train and test data
+.2021-12-20 19:56:32,285 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:32,335 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:32,336 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:32,337 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:32,338 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:32,740 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.25 sec
+Total number of fitted models: 2
+2021-12-20 19:56:32,741 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:32,820 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:34 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 2
+Created version '2' of model 'rf'.
+2021-12-20 19:56:34,317 | flask_app.app | INFO | Save train and test data
+2021-12-20 19:56:34,371 | flask_app.app | INFO | Model rf of version 2 is deleted
+.2021-12-20 19:56:34,378 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:34,418 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:34,419 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:34,420 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:34,420 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:34,768 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.26 sec
+Total number of fitted models: 3
+2021-12-20 19:56:34,768 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:34,851 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:36 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 3
+Created version '3' of model 'rf'.
+2021-12-20 19:56:36,402 | flask_app.app | INFO | Save train and test data
+2021-12-20 19:56:36,468 | flask_app.app | INFO | Model rf of version 3 is deleted
+2021-12-20 19:56:36,470 | flask_app.app | INFO | Get predictions for model rf of version 3
+2021-12-20 19:56:36,470 | flask_app.app | ERROR | Model rf of version 3 was deleted
+Could not make predictions
+.2021-12-20 19:56:36,474 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:36,509 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:36,509 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:36,511 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:36,511 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:36,888 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.29 sec
+Total number of fitted models: 4
+2021-12-20 19:56:36,888 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:36,966 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:38 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 4
+Created version '4' of model 'rf'.
+2021-12-20 19:56:38,545 | flask_app.app | INFO | Save train and test data
+.2021-12-20 19:56:38,572 | flask_app.app | INFO | Total number of fitted models: 1
+.2021-12-20 19:56:38,577 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:38,624 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:38,625 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:38,626 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:38,627 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:38,993 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.27 sec
+Total number of fitted models: 5
+2021-12-20 19:56:38,993 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:39,136 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:40 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 5
+Created version '5' of model 'rf'.
+2021-12-20 19:56:40,695 | flask_app.app | INFO | Save train and test data
+2021-12-20 19:56:40,723 | flask_app.app | INFO | Get predictions for model rf of version 5
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/pyfunc/__init__.py:325: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  if values.dtype == np.object and t not in (DataType.binary, DataType.string):
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/pyfunc/__init__.py:325: DeprecationWarning: `np.object` is a deprecated alias for the builtin `object`. To silence this warning, use `object` by itself. Doing this will not modify any behavior and is safe.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  if values.dtype == np.object and t not in (DataType.binary, DataType.string):
+2021-12-20 19:56:40,821 | flask_app.app | INFO | Predictions for model rf of version 5 are made
+.2021-12-20 19:56:40,831 | flask_app.app | INFO | Fit RandomForestRegression
+2021-12-20 19:56:40,832 | flask_app.app | ERROR | Model RandomForestRegression is not available
+ Could not fit the model
+.2021-12-20 19:56:40,838 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:40,885 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:40,885 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:40,887 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:40,887 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:41,217 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.24 sec
+Total number of fitted models: 6
+2021-12-20 19:56:41,217 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:41,293 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:42 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 6
+Created version '6' of model 'rf'.
+2021-12-20 19:56:42,862 | flask_app.app | INFO | Save train and test data
+.2021-12-20 19:56:42,889 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:42,927 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:42,927 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:42,929 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:42,929 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:43,322 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.3 sec
+Total number of fitted models: 7
+2021-12-20 19:56:43,322 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:43,459 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:45 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 7
+Created version '7' of model 'rf'.
+2021-12-20 19:56:45,053 | flask_app.app | INFO | Save train and test data
+2021-12-20 19:56:45,087 | flask_app.app | INFO | Retrain model rf of version 7 on a new data
+2021-12-20 19:56:45,175 | flask_app.app | INFO | Size of training set: 100 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:45,295 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:45,523 | flask_app.app | INFO | RandomForestRegressor is re-fitted
+Training time: 0.23 sec
+
+2021-12-20 19:56:45,523 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:45,603 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:47 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 8
+Created version '8' of model 'rf'.
+2021-12-20 19:56:47,173 | flask_app.app | INFO | Save new train data
+.2021-12-20 19:56:47,206 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:47,250 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:47,251 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:47,253 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:47,253 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:47,644 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.28 sec
+Total number of fitted models: 8
+2021-12-20 19:56:47,644 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:47,726 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:49 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 9
+Created version '9' of model 'rf'.
+2021-12-20 19:56:49,252 | flask_app.app | INFO | Save train and test data
+.2021-12-20 19:56:49,288 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:49,338 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:49,339 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:49,340 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:49,341 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:49,720 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.29 sec
+Total number of fitted models: 9
+2021-12-20 19:56:49,720 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:49,802 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:51 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 10
+Created version '10' of model 'rf'.
+2021-12-20 19:56:51,372 | flask_app.app | INFO | Save train and test data
+.2021-12-20 19:56:51,421 | flask_app.app | INFO | Fit DecisionTreeRegressor
+2021-12-20 19:56:51,461 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:51,462 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:51,464 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:51,464 | flask_app.app | ERROR | Invalid parameters in grid for estimator DecisionTreeRegressor
+Could not fit the model
+.2021-12-20 19:56:51,485 | flask_app.app | INFO | Fit RandomForestRegressor
+2021-12-20 19:56:51,523 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:51,523 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:51,525 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:51,525 | flask_app.app | INFO | Fit estimator with the following parameters: {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'mse', 'max_depth': None, 'max_features': 'auto', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_impurity_split': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_jobs': None, 'oob_score': False, 'random_state': None, 'verbose': 0, 'warm_start': False}
+2021-12-20 19:56:51,913 | flask_app.app | INFO | RandomForestRegressor is fitted
+Training time: 0.29 sec
+Total number of fitted models: 10
+2021-12-20 19:56:51,913 | flask_app.app | INFO | Calculate performance metrics
+2021-12-20 19:56:51,998 | flask_app.app | INFO | Save model
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/utils.py:139: DeprecationWarning: ``mlflow.types.schema.column_types`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.input_types`` instead.
+  [t in (DataType.integer, DataType.long) for t in schema.column_types()]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/types/schema.py:361: DeprecationWarning: ``mlflow.types.schema.columns`` is deprecated since 1.14. This method will be removed in a near future release. Use ``mlflow.types.Schema.inputs`` instead.
+  return [x.type for x in self.columns]
+/Users/annasverkunova/Desktop/Python Advanced/hw3/venv/lib/python3.8/site-packages/mlflow/models/signature.py:129: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+  inputs = _infer_schema(model_input)
+Registered model 'rf' already exists. Creating a new version of this model...
+2021/12/20 19:56:53 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: rf, version 11
+Created version '11' of model 'rf'.
+2021-12-20 19:56:53,508 | flask_app.app | INFO | Save train and test data
+2021-12-20 19:56:53,531 | flask_app.app | INFO | Get predictions for model rf_model of version 1
+2021-12-20 19:56:53,532 | flask_app.app | ERROR | Model rf_model of version 1 does not exist
+Could not make predictions
+.2021-12-20 19:56:53,536 | flask_app.app | INFO | Fit RandomForestClassifier
+2021-12-20 19:56:53,572 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:53,572 | flask_app.app | ERROR | RandomForestClassifier can only be used for classification tasks
+Could not fit the model
+.2021-12-20 19:56:53,590 | flask_app.app | INFO | Fit DecisionTreeRegressor
+2021-12-20 19:56:53,625 | flask_app.app | INFO | Number of observations: 506
+2021-12-20 19:56:53,626 | flask_app.app | INFO | Split data into train and test subsets
+2021-12-20 19:56:53,627 | flask_app.app | INFO | Size of training set: 354 observations
+Size of testing set: 152 observations
+2021-12-20 19:56:53,627 | flask_app.app | ERROR | DecisionTreeRegressor got an unexpected keyword argument
+Could not fit the model
+.
+----------------------------------------------------------------------
+Ran 16 tests in 25.410s
+
+OK
+(venv) (base) annasverkunova@mbp-anna-2 hw3 % coverage report
+Name                    Stmts   Miss  Cover
+-------------------------------------------
+flask_app/__init__.py       0      0   100%
+flask_app/app.py          252     38    85%
+tests/__init__.py           0      0   100%
+tests/test.py             123      1    99%
+-------------------------------------------
+TOTAL                     375     39    90%
