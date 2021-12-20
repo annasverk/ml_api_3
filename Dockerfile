@@ -16,4 +16,4 @@ ENV BACKEND_URI sqlite:////mlflow/mlflow.db
 ENV ARTIFACT_ROOT /mlflow/artifacts
 
 # Run mlflow server
-CMD mlflow server --backend-store-uri ${BACKEND_URI} --default-artifact-root ${ARTIFACT_ROOT} --host 0.0.0.0 --port 5050 --file-store /mlflow/
+CMD mlflow server --host 0.0.0.0 --port 5050 --file-store /mlflow/
